@@ -4,7 +4,7 @@ if (isset($_GET["employeeId"]) && !empty(trim($_GET["employeeId"]))) {
 
     require_once "../config.php";
 
-    $sql = "SELECT * FROM employees WHERE id = ?";
+    $sql = "SELECT * FROM employees WHERE employeeId = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
 

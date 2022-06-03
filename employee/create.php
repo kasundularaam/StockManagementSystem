@@ -6,8 +6,14 @@ $name = $phone = $address = $DOB = $salary = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $name= $_POST["name"];
+    $phone= $_POST["phone"];
+    $DOB= $_POST["DOB"];
+    $salary= $_POST["salary"];
+    $address= $_POST["address"];
 
-    $sql = "INSERT INTO employees (name, phone, address, DOB, salary) VALUES (?, ?, ?, ?,?)";
+
+    $sql = "INSERT INTO employees (name, phone, address, DOB, salary) VALUES (?, ?, ?, ?, ?)";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
 
