@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .wrapper {
-            width: 600px;
+            width: 100vw;
             margin: 0 auto;
         }
 
@@ -27,6 +27,21 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../dashboard.php">Stock Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="../dashboard.php">Dashboard</a>
+                <a class="nav-item nav-link" href="#">Managers</a>
+                <a class="nav-item nav-link" href="#">Products</a>
+                <a class="nav-item nav-link" href="#">Suppliers</a>
+
+            </div>
+        </div>
+    </nav>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -64,8 +79,9 @@
                                 echo "<td>" . $row['DOB'] . "</td>";
                                 echo "<td>" . $row['salary'] . "</td>";
                                 echo "<td>";
-                                echo '<a href="read.php?id=' . $row['employeeId'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                echo '<a href="delete.php?id=' . $row['employeeId'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                echo '<a href="read.php?employeeId=' . $row['employeeId'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo '<a href="update.php?employeeId=' . $row['employeeId'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                echo '<a href="delete.php?employeeId=' . $row['employeeId'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }

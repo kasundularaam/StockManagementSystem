@@ -2,6 +2,7 @@
 
 if (isset($_GET["employeeId"]) && !empty(trim($_GET["employeeId"]))) {
 
+
     require_once "../config.php";
 
     $sql = "SELECT * FROM employees WHERE employeeId = ?";
@@ -42,7 +43,6 @@ if (isset($_GET["employeeId"]) && !empty(trim($_GET["employeeId"]))) {
 
     mysqli_close($link);
 } else {
-
     header("location: error.php");
     exit();
 }
